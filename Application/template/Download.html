@@ -1,0 +1,80 @@
+<!--Creating a button that will lead users to a dropdown menu where they can choose which csv to download-->
+
+
+<body>
+  <div class="modal fade" id="downloadmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="example">Download the data of the hotels here</h1>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+        <div class="modal-body">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              Carlton
+              </a>
+            </div>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion" style="text-align: center">
+               <a class="btn btn-outline-primary" href="{{url_for('downloadCarlton')}}">Click here to download Carlton csv</a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                  Fullerton
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body" style="text-align: center">
+                  <a class="btn btn-outline-primary" href="{{url_for('downloadFullerton')}}">Click here to download Fullerton csv</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                  Hotel G
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body" style="text-align: center">
+                  <a class="btn btn-outline-primary" href="{{url_for('downloadHotelG')}}">Click here to download Hotel G csv</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                  ShangriLa
+                </a>
+              </div>
+              <div id="collapseFour" class="collapse" data-parent="#accordion">
+                <div class="card-body" style="text-align: center">
+                  <a class="btn btn-outline-primary" href="{{url_for('downloadShangriLa')}}">Click here to download ShangriLa csv</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="text-align: center">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                  Yotel
+                </a>
+              </div>
+              <div id="collapseFive" class="collapse" data-parent="#accordion">
+                <div class="card-body" style="text-align: center">
+                  <a class="btn btn-outline-primary" href="{{url_for('downloadYotel')}}">Click here to download Yotel csv</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,25 @@
+<!--Using the main layout in layout.html-->
+{% extends "layout.html" %}
+<!--Includes the redirect link for users to download-->
+{% include "Download.html" %}
+
+<!--Creating an "Our Objective" page with a button to allow them to download csvs-->
+{% block content %}
+
+        <div class = "card" style = "background-color: #b7b6aed8">
+            <div class = "card-body">
+            <h4 class = "card-title">Our Objective</h4>
+            <p class = "card-text">We aim to assist hotel managements to better their consumer analytics process by providing data sets to improve profitability.</p>
+
+                <small class="text-muted"><button type="button" class="btn btn-dark" data-toggle="modal" data-target= "#downloadmodal">Choose a hotel's data to download</button></small>
+            </div>
+        </div>
+<!--Creating containers to redirect users to the features of our GUI-->
+        <div class = "container">
+             {% include "services.html" %}
+
+        </div>
+<!--Connecting the pop up window layout in the html to the main page -->
+{% include "Pop-up-window.html" %}
+
+{% endblock %}

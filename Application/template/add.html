@@ -1,0 +1,113 @@
+<!--Using the Graph layout in GraphLayout.html to show 2 containers in the same row-->
+{% extends 'GraphLayout.html' %}
+
+{% block content %}
+<!--Creating a form for people to input the customer profiles-->
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <h2>Input Customer profile</h2>
+    <div class="card card-style mb-2">
+        <div class="card-body">
+            <form method="POST">
+                {{ form.csrf_token() }}
+                <fieldset class="form-group">
+                    <legend class="mb-4">Customer Profile</legend>
+<!--Creating 6 categories for the users to input:Hotels,Type of trips,Month of Stay, No. of contributions from reviewers,No. of helpful votes from reviewers, Review description-->
+                    <div class="form-group">
+                        {{ form.Hotel.label(class = "form-control-label") }}
+                        {{ form.Hotel(class = "form-control form-control-sm") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.Type.label(class = "form-control-label") }}
+                        {{ form.Type(class = "form-control form-control-sm") }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.Month.label(class = "form-control-label") }}
+                        {{ form.Month(class = "form-control form-control-sm") }}
+                    </div>
+<!--Creating of an integer field that only wants the user to input integers for HelpfulVotes and Contributions-->
+                    <div class="form-group">
+                        {{ form.HelpfulVotes.label(class="form-control-label") }}
+                        {% if form.HelpfulVotes.errors %}
+                        {{ form.HelpfulVotes(class="form-control form-control-sm is-invalid") }}
+                        {% for error in form.HelpfulVotes.errors %}
+                        <div class="invalid-feedback">
+                            <span>{{error}}</span>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {{ form.HelpfulVotes(class="form-control form-control-sm") }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.Contributions.label(class="form-control-label") }}
+                        {% if form.Contributions.errors %}
+                        {{ form.Contributions(class="form-control form-control-sm is-invalid") }}
+                        {% for error in form.Contributions.errors %}
+                        <div class="invalid-feedback">
+                            <span>{{error}}</span>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {{ form.Contributions(class="form-control form-control-sm") }}
+                        {% endif %}
+                    </div>
+                     <div class="form-group">
+                        {{ form.Review.label(class="form-control-label") }}
+                        {% if form.Review.errors %}
+                        {{ form.Review(class="form-control form-control-sm is-invalid") }}
+                        {% for error in form.Review.errors %}
+                        <div class="invalid-feedback">
+                            <span>{{error}}</span>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        {{ form.Review(class="form-control form-control-sm") }}
+                        {% endif %}
+                     </div>
+                    <div class="form-group border-bottom pb-3">
+                        {{ form.submit(class="btn btn-outline-info")}}
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Showing a table of the customer profile indicated-->
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <h2>Table of Customer profile</h2>
+    <div class="card card-style mb-2">
+        <div class="card-body">
+            <div class=col-xs-10 col-sm-6 col-md-6">
+        <H2>CustomerProfile</H2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Hotel</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Month</th>
+                    <th scope="col">Contributions</th>
+                    <th scope="col">HelpfulVotes</th>
+                    <th scope="col">Review</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in entries %}
+                        <tr>
+                            <th scope="row">{{loop.index}}</th>
+                            <td>{{entry.Hotel}}</td>
+                            <td>{{entry.Type}}</td>
+                            <td>{{ entry.Month }}</td>
+                            <td>{{ entry.Contributions }}</td>
+                            <td>{{ entry.HelpfulVotes }}</td>
+                            <td>{{ entry.Review }}</td>
+                            <td><a href="{{ url_for('delete', entry_id = entry.id) }}" class="btn btn-outline-danger btn-sm">Delete</a></td>
+                        </tr>
+                {% endfor %}
+        </tbody>
+        </table>
+    </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends "Graphlayout.html" %}
+
+<!--Creating the Hotel graphs-->
+{% block content %}
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart1" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph1 | safe}};
+Plotly.plot('chart1',graphs,{});
+</script></html>
+
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart2" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph2 | safe}};
+Plotly.plot('chart2',graphs,{});
+</script></html>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart3" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph3 | safe}};
+Plotly.plot('chart3',graphs,{});
+</script></html>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart4" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph4 | safe}};
+Plotly.plot('chart4',graphs,{});
+</script></html>
+
+
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart5" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph5 | safe}};
+Plotly.plot('chart5',graphs,{});
+</script></html>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart6" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{HotelGraph6 | safe}};
+Plotly.plot('chart6',graphs,{});
+</script></html>
+
+
+
+
+
+<!--Images of the wordcloud for Yotel-->
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div class ="card-header">Negative Titles Word Cloud</div>
+            <img src="/static/images/Yotel_WC(neg title).png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div class ="card-header">Negative Review Word Cloud</div>
+            <img src="/static/images/Yotel_WC(neg desc).png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div class ="card-header">Positive Titles Word Cloud</div>
+            <img src="/static/images/Yotel_WC(positive title).png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div class ="card-header">Positive Review Word Cloud</div>
+            <img src="/static/images/Yotel_WC(positive desc).png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Image of the heatmap for Yotel-->
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <img src="/static/images/YotelCorrelationData.png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

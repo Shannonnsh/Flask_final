@@ -1,0 +1,31 @@
+<!--Creating services menu that shows the users what features we have alongside descriptions and images-->
+<div class = "card>
+  <div class = "card-header">
+        <h4><p class="fs-1"><p class="text-decoration-underline"></p><b>Our Services</b></p></div></h4>
+  </div>
+<div class = "card-body">
+  <div class="card-group">
+<!--Creating a comparison tab that redirects users comparison.html where users can filter based on hotels-->
+  <div class="card">
+    <img src="/static/images/leftpic.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Comparison with other hotels</h5>
+      <p class="card-text">This section compares the various hotels against each other in graphical format.<br>We made use of Matplotlib, Plotly and Pandas!</br></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><button type = "button" class = "btn btn-info" onclick='window.location.href="/comparison"'>View the comparisons here</button> </small>
+    </div>
+  </div>
+<!--Creating a Individual Hotel Analysis tab to show in-depth statistical methods used to show areas for improvement for each hotel-->
+  <div class="card">
+    <img src="./static/images/rightpic.jpg" class="card-img-top" alt=" ">
+    <div class="card-body">
+      <h5 class="card-title">Individual Hotel Analysis</h5>
+      <p class="card-text">This section showcases the various graphical data which are specially curated using the various Python Libraries.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><button type="button" class="btn btn-info" data-toggle="modal" data-target= "#popupmodal">View the hotels here</button></small>
+    </div>
+  </div>
+</div>
+</div>

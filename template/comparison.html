@@ -1,0 +1,101 @@
+<!--Using the new layout to fit 2 graphs in a row-->
+{% extends "Graphlayout.html" %}
+
+<!--Putting the graphs into containers that allow the graphs to show within the container-->
+{% block content %}
+<!--Creating the containers-->
+<!--<body style="font-family:arial, sans-serif">-->
+<!--<div class="col-xs-10 col-sm-6 col-md-6">-->
+<!--    <div class="card-body">-->
+<!--        <div class="card card-style mb-2">-->
+<!--            <div id="chart" class="chart-container" style="position: relative;">-->
+<!--                <div>{{description}}</div></body>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash;Scripts used to generate the graphs from plotly&ndash;&gt;-->
+<!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--var graphs = {{graph | safe}};-->
+<!--Plotly.plot('chart',graphs,{});-->
+<!--</script>-->
+
+<!--Repeating the first step to create more containers and generate more graphs-->
+<!--<body style="font-family:arial, sans-serif">-->
+<!--<div class="col-xs-10 col-sm-6 col-md-6">-->
+<!--    <div class="card-body">-->
+<!--        <div class="card card-style mb-2">-->
+<!--            <div id="chart1" class="chart-container" style="position: relative;">-->
+<!--                <div>{{description}}</div></body>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--var graphs = {{graph1 | safe}};-->
+<!--Plotly.plot('chart1',graphs,{});-->
+<!--</script>-->
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart1" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{OverallGraph1 | safe}};
+Plotly.plot('chart1',graphs,{});
+</script>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart2" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{OverallGraph2 | safe}};
+Plotly.plot('chart2',graphs,{});
+</script>
+
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <div id="chart3" class="chart-container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+var graphs = {{OverallGraph3 | safe}};
+Plotly.plot('chart3',graphs,{});
+</script></html>
+
+<!--Image of the heatmap for all the hotels-->
+<body style="font-family:arial, sans-serif">
+<div class="col-xs-10 col-sm-6 col-md-6">
+    <div class="card-body">
+        <div class="card card-style mb-2">
+            <img src="/static/images/OverallHotelCorrelationData.png" class="card-img-top" alt="...">
+            <div class="container" style="position: relative;">
+                <div>{{description}}</div></body>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
