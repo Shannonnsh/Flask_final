@@ -1,5 +1,4 @@
 #Using flask to create a Web App
-import scipy.sparse
 from flask import Flask, render_template, redirect, make_response
 #Creating the database id and password for a secure network
 from flask_sqlalchemy import SQLAlchemy
