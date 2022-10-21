@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 import json
 import plotly.utils
 
-#Libraries used for machine learning and graphing
+#Libraries used for machine learning, graphing and cleaning of data
 import pandas as pd
 import numpy as np
 
@@ -501,6 +501,7 @@ def FullertonMain():
 
     return render_template("FullertonMain.html", HotelGraph1=Fullerton1, HotelGraph2=Fullerton2, HotelGraph3=Fullerton5,HotelGraph4=Fullerton4, HotelGraph5=Fullerton3, HotelGraph6=Fullerton6)
 
+#Creating a route for HotelG
 @app.route("/HotelG")
 def HotelGMain():
     HotelGSA = "./static/data/HotelG_SA.csv"
@@ -538,6 +539,7 @@ def HotelGMain():
 
     return render_template("HotelGMain.html", HotelGraph1=HotelG1, HotelGraph2=HotelG2, HotelGraph3=HotelG5, HotelGraph4=HotelG4, HotelGraph5=HotelG3, HotelGraph6=HotelG6)
 
+#Creating a route for ShangriLa
 @app.route("/ShangriLa")
 def ShangriLaMain():
     ShangriLaSA = "./static/data/ShangriLa_SA.csv"
@@ -574,7 +576,7 @@ def ShangriLaMain():
     ShangriLa6 = ROC_Curve_with_AUC_RMSE(ShangriLacdata)
     return render_template("ShangriLaMain.html", HotelGraph1=ShangriLa1, HotelGraph2=ShangriLa2, HotelGraph3=ShangriLa5, HotelGraph4=ShangriLa4, HotelGraph5=ShangriLa3, HotelGraph6=ShangriLa6)
 
-
+#Creating a  route for Yotel
 @app.route("/Yotel")
 def YotelMain():
     YotelSA = "./static/data/Yotel_SA.csv"
@@ -646,7 +648,7 @@ def Carlton():
     fig6=ROC_Curve_with_AUC_RMSE(Carltoncdata)
     return render_template("CarltonMain.html", HotelGraph1=fig1, HotelGraph2=fig2, HotelGraph3=fig5, HotelGraph4=fig4, HotelGraph5=fig3, HotelGraph6=fig6)
 
-
+#Creating routes for users to download excel files for each hotel
 @app.route('/downloadCarlton')
 def downloadCarlton():
     path = './static/data/Carlton.csv '
