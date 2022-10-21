@@ -695,9 +695,6 @@ def downloadYotel():
     resp.headers["Content-Type"] = "text/csv"
     return resp
 
-@app.route('/Chatbot')
-def chatbot():
-    return render_template("index.html")
 
 
 #Function to run the app
